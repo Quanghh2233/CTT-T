@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f0f2f5;
+    /* Smoky gray background color */
+    background-image: linear-gradient(to bottom right, #f5f7fa, #e4e8ef);
+    min-height: 100vh;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+/* Fix for Ant Design layout components */
+.ant-layout {
+    min-height: 100vh;
+    background: transparent !important;
+}
+
+.ant-layout-content {
+    background: transparent !important;
+}
+
+/* Add depth to cards and content areas */
+.ant-card,
+.content-container {
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
+        0 9px 28px 0 rgba(0, 0, 0, 0.05),
+        0 12px 48px 16px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+/* Customize scroll bars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1890ff;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
+/* Add colorful accents */
+.ant-btn-primary {
+    background: linear-gradient(45deg, #1890ff, #0056b3);
+    border: none;
+    box-shadow: 0 4px 10px rgba(24, 144, 255, 0.3);
+}
+
+.ant-btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #004494);
+    box-shadow: 0 6px 12px rgba(24, 144, 255, 0.4);
+}
+
+.ant-tag-blue {
+    background-color: #e6f7ff;
+    border-color: #91d5ff;
+    color: #0056b3;
+}
+
+.ant-tag-green {
+    background-color: #f6ffed;
+    border-color: #b7eb8f;
+    color: #52c41a;
+}
+
+.ant-tag-magenta {
+    background-color: #fff0f6;
+    border-color: #ffadd2;
+    color: #eb2f96;
+}
+
+.ant-tag-orange {
+    background-color: #fff7e6;
+    border-color: #ffd591;
+    color: #fa8c16;
+}
+
+/* Make cards more attractive */
+.ant-card {
+    transition: all 0.3s;
+}
+
+.ant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Headers and footers */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.site-footer {
+    margin-top: 24px;
+}

@@ -1,0 +1,49 @@
+{
+    "name": "finance-ministry-portal-client",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@ant-design/icons": "^5.0.1",
+        "antd": "^5.4.6",
+        "axios": "^1.4.0",
+        "moment": "^2.29.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-quill": "^2.0.0",
+        "react-redux": "^8.0.5",
+        "react-router-dom": "^6.11.0",
+        "redux": "^4.2.1",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-thunk": "^2.4.2",
+        "web-vitals": "^3.3.1"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "react-scripts": "5.0.1"
+    },
+    "scripts": {
+        "start": "cross-env PORT=4000 react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "proxy": "http://localhost:6000"
+}

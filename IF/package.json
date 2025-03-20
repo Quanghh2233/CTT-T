@@ -1,0 +1,30 @@
+{
+    "name": "finance-ministry-portal",
+    "version": "1.0.0",
+    "description": "Cổng thông tin điện tử nội bộ Bộ Tài Chính",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "server": "node server/server.js",
+        "client": "cd client && cross-env PORT=4000 npm start",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "install-all": "npm install && cd client && npm install && cd ..",
+        "init-db": "node server/config/db-init.js",
+        "reset-db": "node server/config/db-reset.js"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.0",
+        "multer": "^1.4.5-lts.1",
+        "sequelize": "^6.31.0",
+        "sqlite3": "^5.0.0"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "cross-env": "^7.0.3",
+        "nodemon": "^2.0.22"
+    }
+}
