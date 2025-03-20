@@ -121,6 +121,94 @@ npm install sqlite3
 npm install sqlite3@5.0.0
 ```
 
+## Xử lý lỗi thường gặp trên Windows
+
+### 1. Lỗi PowerShell Execution Policy
+
+Nếu bạn gặp lỗi:
+```
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system.
+```
+
+**Cách khắc phục:**
+- Mở PowerShell với quyền Administrator
+- Chạy lệnh: `Set-ExecutionPolicy RemoteSigned` và chọn "Y" để xác nhận
+- Hoặc sử dụng Command Prompt (cmd) thay vì PowerShell để tránh lỗi này
+
+### 2. Lỗi SQLite3 Windows Compatibility
+
+Nếu bạn gặp lỗi:
+```
+Error: \?\c:\path\to\node_modules\sqlite3\build\Release\node_sqlite3.node is not a valid Win32 application
+```
+
+**Cách khắc phục:**
+1. Cài đặt Visual C++ Redistributable:
+   - Tải và cài đặt từ: https://aka.ms/vs/17/release/vc_redist.x64.exe
+
+2. Gỡ cài đặt và cài đặt lại SQLite3:
+   ```
+   npm uninstall sqlite3
+   npm install sqlite3@5.0.0 --no-build-from-source
+   ```
+
+3. Nếu lỗi vẫn tiếp diễn, thử phiên bản cụ thể phù hợp với kiến trúc hệ thống:
+   - Cho Windows 64-bit:
+     ```
+     npm uninstall sqlite3
+     npm install sqlite3 --build-from-source --target_arch=x64
+     ```
+   - Cho Windows 32-bit:
+     ```
+     npm uninstall sqlite3
+     npm install sqlite3 --build-from-source --target_arch=ia32
+     ```
+
+### 3. Lỗi biến môi trường PORT trên Windows
+
+Nếu bạn gặp lỗi:
+```
+'PORT' is not recognized as an internal or external command,
+operable program or batch file.
+```
+
+**Cách khắc phục:**
+1. Cài đặt cross-env:
+   ```
+   npm install --save-dev cross-env
+   ```
+
+2. Sửa lại script trong package.json:
+   ```json
+   "client": "cd client && cross-env PORT=4000 npm start"
+   ```
+
+3. Nếu lỗi vẫn xuất hiện trong client, cài đặt cross-env trong thư mục client:
+   ```
+   cd client
+   npm install --save-dev cross-env
+   ```
+   
+4. Sửa file client/package.json:
+   ```json
+   "start": "cross-env PORT=4000 react-scripts start"
+   ```
+
+### 4. Lỗi windows-build-tools
+
+Nếu việc cài đặt windows-build-tools gặp lỗi:
+
+**Cách khắc phục:**
+1. Cài đặt Visual Studio Build Tools và Python riêng biệt:
+   - Tải và cài đặt Visual Studio Build Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+   - Tải và cài đặt Python 2.7: https://www.python.org/downloads/release/python-2718/
+   
+2. Sau khi cài đặt xong, thử cài đặt lại sqlite3:
+   ```
+   npm uninstall sqlite3
+   npm install sqlite3 --build-from-source
+   ```
+
 ## Tài khoản mẫu
 
 Sau khi khởi tạo cơ sở dữ liệu, bạn có thể đăng nhập với các tài khoản sau:
